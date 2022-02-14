@@ -1,0 +1,20 @@
+.header__sun {
+    background-color: rgb(238, 238, 238) !important;
+}
+
+.body__sun {
+    background-color: #fff !important;
+    background-image: none;
+}
+
+.bgBlue {
+    background-color: #5792E0 !important;
+}
+
+.colorBlack {
+    color: #161D27 !important;
+}
+
+.colorBlue {
+    color: #5792E0 !important;
+}
