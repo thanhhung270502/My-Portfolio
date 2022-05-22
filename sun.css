@@ -18,3 +18,31 @@
 .colorBlue {
     color: #5792E0 !important;
 }
+
+.colorYellow {
+    color: #FFC174 !important;
+}
+
+.colorWhite {
+    color: aliceblue !important;
+}
+
+#qualification-section .qualification__tabs .show__tabs__Y {
+    opacity: 1;
+    color: #FFC174 !important;
+}
+
+#qualification-section .qualification__tabs .hide__tabs__Y {
+    opacity: 0.6;
+    color: aliceblue !important;
+}
+
+#qualification-section .qualification__tabs .show__tabs__B {
+    opacity: 1;
+    color: #5792E0 !important;
+}
+
+#qualification-section .qualification__tabs .hide__tabs__B {
+    opacity: 0.6;
+    color: #161D27 !important;
+}

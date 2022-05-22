@@ -10,7 +10,7 @@ var menuColor  = $$('#header-section .main-menu li a');
 var bodyBG = $('body');
 
 var width800__css = $$('.width800');
-var title = document.querySelectorAll('.title');
+var title = $$('.title');
 
 var home__css = $('#home-section');
 var home__title = $('.home__title'); 
@@ -21,7 +21,17 @@ var about__contact = $('#about-section .about__description .about__data a');
 var skill__box = $$('#skill-section .skill__box');
 var skill__list = $$('#skill-section .skill__list');
 var skill__icon = $$('#skill-section .skill__box .uil');
+
+// Qualification
+var clickEdu = $('.qualification__name-edu');
+var clickWork = $('.qualification__name-work');
+
+var openEdu = $('.qualification__edu');
+var openWork = $('.qualification__work');
+
 var skill__tabs = $('#qualification-section .qualification__tabs .show__tabs');
+
+var check__SM = 0
 
 clickSM.onclick = function() {
     clickSM.classList.toggle('uil-sun');
@@ -59,7 +69,54 @@ clickSM.onclick = function() {
         item.classList.toggle('colorBlue');
     })
 
-    skill__tabs.style.color = '#5792E0';
+    if (check__qualification == 1) {
+        if (check__SM % 2 == 0) { // Y -> B
+            clickEdu.classList.remove('hide__tabs__Y')
+            clickEdu.classList.remove('show__tabs__Y')
+            
+            clickWork.classList.remove('hide__tabs__Y')
+            clickWork.classList.remove('show__tabs__Y')
+
+            clickEdu.classList.add('show__tabs__B')
+            clickWork.classList.add('hide__tabs__B')
+        }
+        else if (check__SM % 2 == 1) { // B -> Y
+            clickEdu.classList.remove('hide__tabs__B')
+            clickEdu.classList.remove('show__tabs__B')
+            
+            clickWork.classList.remove('hide__tabs__B')
+            clickWork.classList.remove('show__tabs__B')
+
+            clickEdu.classList.add('show__tabs__Y')
+            clickWork.classList.add('hide__tabs__Y')
+        }
+    }
+
+    else if (check__qualification == 2) {
+        if (check__SM % 2 == 0) { // Y -> B
+            clickEdu.classList.remove('hide__tabs__Y')
+            clickEdu.classList.remove('show__tabs__Y')
+            
+            clickWork.classList.remove('hide__tabs__Y')
+            clickWork.classList.remove('show__tabs__Y')
+
+            clickWork.classList.add('show__tabs__B')
+            clickEdu.classList.add('hide__tabs__B')
+        }
+        else if (check__SM % 2 == 1) { // B -> Y
+            clickEdu.classList.remove('hide__tabs__B')
+            clickEdu.classList.remove('show__tabs__B')
+            
+            clickWork.classList.remove('hide__tabs__B')
+            clickWork.classList.remove('show__tabs__B')
+
+            clickWork.classList.add('show__tabs__Y')
+            clickEdu.classList.add('hide__tabs__Y')
+        }
+    }
+
+    check__SM += 1;
+    // skill__tabs.style.color = '#5792E0';
 }
 
 // Mobile-header
@@ -79,12 +136,12 @@ closeMobileMenu.onclick = function() {
 var clickSkill_a = document.querySelector('.a');
 var clickSkill_b = document.querySelector('.b');
 var clickSkill_c = document.querySelector('.c');
-var clickSkill_d = document.querySelector('.d');
+// var clickSkill_d = document.querySelector('.d');
 
 var openSkill_a = document.querySelector('.aa');
 var openSkill_b = document.querySelector('.bb');
 var openSkill_c = document.querySelector('.cc');
-var openSkill_d = document.querySelector('.dd');
+// var openSkill_d = document.querySelector('.dd');
 
 clickSkill_a.onclick = function() {
     openSkill_a.classList.toggle('open__list');
@@ -98,16 +155,11 @@ clickSkill_c.onclick = function() {
     openSkill_c.classList.toggle('open__list');
 }
 
-clickSkill_d.onclick = function() {
-    openSkill_d.classList.toggle('open__list');
-}
+// clickSkill_d.onclick = function() {
+//     openSkill_d.classList.toggle('open__list');
+// }
 
-// Qualification
-var clickEdu = document.querySelector('.qualification__name-edu');
-var clickWork = document.querySelector('.qualification__name-work');
-
-var openEdu = document.querySelector('.qualification__edu');
-var openWork = document.querySelector('.qualification__work');
+var check__qualification = 1
 
 clickEdu.onclick = function() {
     if (openWork.classList.contains('open__tabs')) {
@@ -116,10 +168,34 @@ clickEdu.onclick = function() {
         openEdu.classList.remove('close__tabs');
         openEdu.classList.add('open__tabs');
 
-        clickWork.classList.remove('show__tabs');
-        clickWork.classList.add('hide__tabs');
-        clickEdu.classList.remove('hide__tabs');
-        clickEdu.classList.add('show__tabs');
+        if (check__SM % 2 == 0) { // Yellow
+            clickEdu.classList.remove('hide__tabs__B')
+            clickEdu.classList.remove('show__tabs__B')
+            
+            clickWork.classList.remove('hide__tabs__B')
+            clickWork.classList.remove('show__tabs__B')
+
+            clickWork.classList.remove('show__tabs__Y');
+            clickWork.classList.add('hide__tabs__Y');
+
+            clickEdu.classList.remove('hide__tabs__Y');
+            clickEdu.classList.add('show__tabs__Y');
+        }
+        else if (check__SM % 2 == 1) { // Yellow
+            clickEdu.classList.remove('hide__tabs__Y')
+            clickEdu.classList.remove('show__tabs__Y')
+            
+            clickWork.classList.remove('hide__tabs__Y')
+            clickWork.classList.remove('show__tabs__Y')
+            
+            clickWork.classList.remove('show__tabs__B');
+            clickWork.classList.add('hide__tabs__B');
+
+            clickEdu.classList.remove('hide__tabs__B');
+            clickEdu.classList.add('show__tabs__B');
+        }
+
+        check__qualification = 1
     }
 }
 
@@ -130,10 +206,33 @@ clickWork.onclick = function() {
         openWork.classList.remove('close__tabs');
         openWork.classList.add('open__tabs');
 
-        clickEdu.classList.remove('show__tabs');
-        clickEdu.classList.add('hide__tabs');
-        clickWork.classList.remove('hide__tabs');
-        clickWork.classList.add('show__tabs');
+        if (check__SM % 2 == 0) {
+            clickEdu.classList.remove('hide__tabs__B')
+            clickEdu.classList.remove('show__tabs__B')
+            
+            clickWork.classList.remove('hide__tabs__B')
+            clickWork.classList.remove('show__tabs__B')
+
+            clickEdu.classList.remove('show__tabs__Y');
+            clickEdu.classList.add('hide__tabs__Y');
+
+            clickWork.classList.remove('hide__tabs__Y');
+            clickWork.classList.add('show__tabs__Y');
+        }
+        else if (check__SM % 2 == 1) {
+            clickEdu.classList.remove('hide__tabs__Y')
+            clickEdu.classList.remove('show__tabs__Y')
+            
+            clickWork.classList.remove('hide__tabs__Y')
+            clickWork.classList.remove('show__tabs__Y')
+
+            clickEdu.classList.remove('show__tabs__B');
+            clickEdu.classList.add('hide__tabs__B');
+
+            clickWork.classList.remove('hide__tabs__B');
+            clickWork.classList.add('show__tabs__B');
+        }
+
+        check__qualification = 2
     }
 }
-

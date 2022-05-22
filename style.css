@@ -288,7 +288,7 @@ li {
 
 #qualification-section .qualification__tabs .qualification__name-edu:hover,
 #qualification-section .qualification__tabs .qualification__name-work:hover {
-    color: #FFC174;
+    opacity: 1;
 }
 
 #qualification-section .qualification__tabs .show__tabs {
@@ -297,7 +297,7 @@ li {
 }
 
 #qualification-section .qualification__tabs .hide__tabs {
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 #qualification-section .open__tabs {
